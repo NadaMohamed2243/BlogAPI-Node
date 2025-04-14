@@ -98,8 +98,16 @@ dotenv
 
 
 ### 👤 Users
-Method->Endpoint->Description
-GET->/users->List all users (admin only)
+
+| Method | Endpoint                                   | Description                                      |
+|--------|--------------------------------------------|--------------------------------------------------|
+| GET    | `/users`                                   | Get all users                                    |
+| GET    | `/users?page=?$limit=?&search=?&sortedby=?`| Get all users based on pagination, sort and saech|
+| GET    | `/users/:id`                               | Get a single user by ID                          |
+| GET    | `/users/me`                                | Get current user                                 |
+| PUT    | `/users/:id`                               | Update a user (author or admin only)             |
+| DELETE | `/users/:id`                               | Delete a user (author or admin only)             |
+| PUT    | `/users/me`                                | Update the current user                          |
 
 ### 📝 Posts & Comments
 
@@ -119,7 +127,7 @@ GET->/users->List all users (admin only)
 
 ## 🧪 Testing
 Use Postman or Insomnia to test API endpoints. Ensure to pass the JWT token in the headers for protected routes:
-```bash Authorization: Bearer <token>```
+``` Authorization: Bearer <token>```
 
 
 ## 🔒 Security
