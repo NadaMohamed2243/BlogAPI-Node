@@ -22,22 +22,22 @@ A RESTful API for a blogging platform built with **Express.js**, **Mongoose**, *
 
 blog-api/   
   ├── server.js   
-  ├── models/ 
-        │ ├── User.js 
-        │ └── Post.js 
-  ├── routes/ 
-    │ ├── userRoutes.js 
-    │ ├── postRoutes.js 
-    │ └── authRoutes.js 
-  ├── middleware/ 
-    │ ├── auth.js 
-    │ └── validation.js 
-  ├── controllers/ 
-    │ ├── postController.js 
-    │ └── authController.js 
-  ├── utils/ 
-    │ └── AppError.js 
-  └── .env
+  ├── models/    
+        │ ├── User.js    
+        │ └── Post.js    
+  ├── routes/    
+    │ ├── userRoutes.js    
+    │ ├── postRoutes.js    
+    │ └── authRoutes.js    
+  ├── middleware/    
+    │ ├── auth.js    
+    │ └── validation.js    
+  ├── controllers/    
+    │ ├── postController.js    
+    │ └── authController.js    
+  ├── utils/    
+    │ └── AppError.js    
+  └── .env   
 
 
 
