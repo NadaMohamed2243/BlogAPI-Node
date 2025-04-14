@@ -33,6 +33,56 @@ const updateUserSchema = Joi.object({
     role: Joi.string().valid('user', 'admin').optional()
 });
 
+// posts validation
+// Note: The author field is handled by the authentication middleware, so we don't need to validate it here.
+// The author field should be set to req.user._id in the controller when creating a post.
+const createPostSchema = Joi.object({
+    title: Joi.string().min(5).max(100).required()
+        .messages({
+            'string.min': 'Title must be at least 5 characters long',
+            'string.max': 'Title cannot exceed 100 characters',
+            'any.required': 'Title is required'
+        }),
+    content: Joi.string().min(10).max(10000).required()
+        .messages({
+            'string.min': 'Content must be at least 10 characters long',
+            'string.max': 'Content cannot exceed 10,000 characters',
+            'any.required': 'Content is required'
+        }),
+    tags: Joi.array().items(Joi.string().max(20)).max(10)
+        .messages({
+            'array.max': 'Cannot have more than 10 tags',
+            'string.max': 'Each tag must be less than 20 characters'
+        }),
+});
+
+const updatePostSchema = Joi.object({
+    title: Joi.string().min(5).max(100)
+        .messages({
+            'string.min': 'Title must be at least 5 characters long',
+            'string.max': 'Title cannot exceed 100 characters'
+        }),
+    content: Joi.string().min(10).max(10000)
+        .messages({
+            'string.min': 'Content must be at least 10 characters long',
+            'string.max': 'Content cannot exceed 10,000 characters'
+        }),
+    tags: Joi.array().items(Joi.string().max(20)).max(10)
+        .messages({
+            'array.max': 'Cannot have more than 10 tags',
+            'string.max': 'Each tag must be less than 20 characters'
+        })
+});
+
+const commentSchema = Joi.object({
+    text: Joi.string().min(1).max(500).required()
+        .messages({
+            'string.min': 'Comment must be at least 1 character long',
+            'string.max': 'Comment cannot exceed 500 characters',
+            'any.required': 'Comment text is required'
+        })
+    // author is handled by authentication middleware
+});
 
 
 const validate = (schema) => (req, res, next) => {
@@ -47,5 +97,8 @@ module.exports = {
     validateRegister: validate(registerSchema),
     validateLogin: validate(loginSchema),
     validateUpdateUser: validate(updateUserSchema),
+    validateCreatePost: validate(createPostSchema),
+    validateUpdatePost: validate(updatePostSchema),
+    validateComment: validate(commentSchema),
     validate
 };
