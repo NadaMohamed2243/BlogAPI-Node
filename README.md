@@ -90,9 +90,12 @@ dotenv
 
 ## 🧩 API Endpoints
 ### 🔐 Authentication
-Method->Endpoint->Description
-POST->/auth/register->Register a new user
-POST->/auth/login->Login & get JWT token
+
+| Method | Endpoint         | Description           |
+|--------|------------------|-----------------------|
+| POST   | `/auth/register` | Register a new user   |
+| POST   | `/auth/login`    | Login & get JWT token |
+
 
 ### 👤 Users
 Method->Endpoint->Description
