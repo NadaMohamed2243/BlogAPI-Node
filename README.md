@@ -125,11 +125,12 @@ Use Postman or Insomnia to test API endpoints. Ensure to pass the JWT token in t
 - Populate for author and comments
 
 ## 📚 Resources
-- Express Documentation
-- Mongoose Docs
-- JWT Guide
-- Joi Validation
-- Bcrypt Documentation
+- [Express Documentation](https://expressjs.com/)
+- [Mongoose Documentation](https://mongoosejs.com/)
+- [JWT Guide](https://jwt.io/introduction)
+- [Joi Validation](https://joi.dev/)
+- [Bcrypt Documentation](https://github.com/kelektiv/node.bcrypt.js)
+
 
 ## 📜 License
 This project is open-source and available under the MIT License.
