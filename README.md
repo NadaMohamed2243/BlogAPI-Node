@@ -48,26 +48,26 @@ blog-api/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/blog-api.git
-   cd blog-api ```
+   cd blog-api
 
 2. **Install dependencies**
    ```bash
-   npm install ```
+   npm install
 
 3. **Create a .env file**
    ```bash
    DB_PASSWORD=your_mongodb_connection_password
    DB_USENAME=your_mongodb_connection_username
    MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret ```
+   JWT_SECRET=your_jwt_secret
 
 4. **Run the server**
    ```bash
-   npm start```
+   npm start
 
 5. **Run the project**
    ```bash
-   npm run serve```
+   npm run serve
 
 
 ## 📦 Dependencies
