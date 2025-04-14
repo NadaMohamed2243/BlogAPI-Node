@@ -21,7 +21,7 @@ A RESTful API for a blogging platform built with **Express.js**, **Mongoose**, *
 ## 🗂️ Project Structure
 
 blog-api/   
-  ├── server.js 
+  ├── server.js   
   ├── models/ 
         │ ├── User.js 
         │ └── Post.js 
