@@ -91,24 +91,30 @@ dotenv
 ## 🧩 API Endpoints
 ### 🔐 Authentication
 
-| Method | Endpoint         | Description           |
-|--------|------------------|-----------------------|
-| POST   | `/auth/register` | Register a new user   |
-| POST   | `/auth/login`    | Login & get JWT token |
+| Method | Endpoint         | Description                          |
+|--------|------------------|--------------------------------------|
+| POST   | `/auth/register` | Register a new user & get JWT token  |
+| POST   | `/auth/login`    | Login & get JWT token                |
 
 
 ### 👤 Users
 Method->Endpoint->Description
 GET->/users->List all users (admin only)
 
-### 📝 Posts
-Method	Endpoint	Description
-GET	/posts	Get all posts (with pagination, search)
-GET	/posts/:id	Get a specific post
-POST	/posts	Create a new post (auth required)
-PUT	/posts/:id	Update a post (author or admin)
-DELETE	/posts/:id	Delete a post (author or admin)
-POST	/posts/:id/comments	Add a comment to a post (auth required)
+### 📝 Posts & Comments
+
+| Method | Endpoint                                   | Description                                      |
+|--------|--------------------------------------------|--------------------------------------------------|
+| GET    | `/posts`                                   | Get all posts                                    |
+| GET    | `/posts?page=?$limit=?&search=?&sortedby=?`| Get all posts based on pagination, sort and saech|
+| GET    | `/posts/:id`                               | Get a single post by ID                          |
+| GET    | `/posts/:userid`                           | Get posts by a specific user ID                  |
+| POST   | `/posts`                                   | Create a new post                                |
+| PUT    | `/posts/:id`                               | Update a post (author or admin only)             |
+| DELETE | `/posts/:id`                               | Delete a post (author or admin only)             |
+| POST   | `/posts/:id/comments`                      | Add a comment to a post                          |
+| POST   | `/posts/:id/like`                          | Add a like to a post                             |
+
 
 
 ## 🧪 Testing
